@@ -1,0 +1,198 @@
+Selenium Basics:
+
+get() 
+navigate().to()
+navigate().front()
+navigate().back()
+navigate().forward()
+navigate().refresh()
+getTitle()
+getPageSource()
+getCurrentUrl()
+close()
+quit()
+
+
+WebElements:
+
+findElement()
+findElements()
+By class has static methods
+By.id()
+By.name()
+By.xpath()
+By.className()
+By.tagName()
+By.css()
+By.linkText()   // if we are working links
+By.partialLinkText()
+
+
+
+After finding element:
+
+click()
+senKeys()
+clear()
+getText()
+getAttribute(" " )   //"" in here you can pass id or value...
+isDisplayed()
+isEnabled()
+isSelected()    // checkbox or radio
+getLocation()
+
+
+Select class:
+select.ByIndex()
+select.ByVisibleText()
+select.getOptions()
+select.ByValue()
+
+More actions on WebElements:
+
+Action class.
+MULTIPLE WINDOWS/TABS/ALERTS
+getwindowHandle() - gives me the current ID of the page//super super unique
+getWindowHandles() - gives me set of Strings /no duplicates, no order
+driver.switchTo().window()
+driver.
+
+
+Alert alert = driver.switchTo().alert()
+alert.accept()
+alert.dismiss()
+alert.getText()
+
+
+IFRAMES
+
+driver.switchTo().frame()
+->WeblElement
+->id
+->name
+->index
+
+
+TODAY WE LEARN:
+
+PageFactory, Page object model design
+
+WAITS -> Implicit/ Explicit / Fluent
+===========================================================
+
+Selenium 	is browser automation tool
+TestNG 		is for testing
+Maven 		is for build management
+			is for dependency management
+			
+	Git + GitHub -> VC   (version control)
+
+=============================================================
+
+our code is inGitHub.
+process of bringing 
+
+git clone repo_url
+clone -> 	go to gitHub repository
+			copy everything to local git repository
+			create folder in powershell
+			mk dir put folder name
+			cd  //kiradi yangi folderga
+			ls  /check if it is empty
+			git clone repoURL
+			git
+			ls
+			cd fayl name
+			git status
+			
+		how to bring this fayl into my eclipse
+			
+			import
+			existing workspace
+			if it is maven choose maven
+			browse find my folder
+			click finish
+			
+	WHAT IS PAGE OBJECT
+			
+			LOGIN PAGE   				HOME PAGE     		SEARCH PAGE              
+			LoginPage.java				HomePage.java		SearchPage.java
+	
+	=========================================
+	Page object model design: POM Design
+	=========================================
+	It is very popular design in selenium automation
+	For each page on web application , we create dedicated Java class
+	Inside java Class we have ---->  Fields/Variables/Data/Methods/Behavior 
+	
+	
+	In POM design we store WebElements on that page as Fields/Variables
+			We write methods in Page classes for the actions that you do on that page
+	
+ 	Step 1 enter username
+ 	Step 2 enter password
+ 	Step 3 click login 
+		
+	=====================================
+
+	Step 1 enter username
+ 	Step 2 enter password
+ 	Step 3 click login
+ 	Step 4 verify Welcome Page is there 
+ 	
+ 	
+ 	
+ 	Benefits of POM
+ 	- reusable code
+ 	- centralized maintanance
+ 	- easy to read
+ 	- easy to maintain the code
+ 	- can create new tests efficiently
+ 	
+ 	For example id id changes or you wanted to use css instead of 
+ 	id you just go to pom file and change the @FindBy 
+ 	
+	Step 1 enter INVALID username
+ 	Step 2 enter INVALID password
+ 	Step 3 click login
+	sTEP 4 "Invalid message " should be displayed 	
+
+===============================================
+	PageFactory.initElements(driver, this)
+===============================================
+it is special class in Selenium that is written to 
+support page object model design.
+hey, PageFactory initialize all all elements(locate, find..)  using the 
+driver provided
+
+
+
+
+
+========================================================
+Step 1 Navigate to login page
+Step 2 Assert that you are in  loginpage
+Step 3 Login using valid credentials
+Step 4 Verify following labels are displayed
+-WebOrders is displayed
+-List of all orders is displayed
+-Welcome Tester
+-view all orders
+-view all products
+-order
+
+
+===========================================================
+Step 1 Navigate to login page
+Step 2 Assert that you are in  loginpage
+Step 3 Login using valid credentials
+Step4 Click on view all products
+Step5 : Verify all following is displayed
+	MyMoney
+	FamilyAlbum
+	ScreenSaver
+Step 6 Verify Prices  and discounts for the productions
+
+
+
+
